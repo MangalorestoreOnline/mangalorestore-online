@@ -59,7 +59,7 @@ export function HeroBanner() {
   const slide = HERO_SLIDES[currentSlide];
 
   return (
-    <div className="relative w-full h-[400px] sm:h-[480px] lg:h-[540px] bg-brand-dark overflow-hidden">
+    <div className="relative w-full h-[360px] sm:h-[480px] lg:h-[540px] bg-brand-dark overflow-hidden">
       {/* Background Image with Dark Gradient Overlay */}
       <div className="absolute inset-0 transition-all duration-700">
         <Image
@@ -70,47 +70,47 @@ export function HeroBanner() {
           sizes="100vw"
           className="object-cover opacity-45 transform scale-105 transition-transform duration-1000"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30 sm:to-transparent" />
       </div>
 
       {/* Content Container */}
       <div className="relative max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center">
-        <div className="max-w-xl text-white space-y-4 sm:space-y-6">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-saffron/90 text-white rounded-full text-xs font-bold tracking-wide uppercase shadow">
+        <div className="max-w-xl text-white space-y-3 sm:space-y-6 pt-2 sm:pt-0">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-brand-saffron/90 text-white rounded-full text-[10px] sm:text-xs font-bold tracking-wide uppercase shadow">
             {slide.badge}
           </span>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white leading-tight">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white leading-tight">
             {slide.title}
           </h1>
 
-          <p className="text-sm sm:text-base text-gray-200 line-clamp-2 sm:line-clamp-none font-sans">
+          <p className="text-xs sm:text-base text-gray-200 line-clamp-2 sm:line-clamp-none font-sans max-w-md">
             {slide.description}
           </p>
 
-          <div className="pt-2 flex items-center gap-4">
+          <div className="pt-1 sm:pt-2 flex items-center gap-4">
             <Link
               href={slide.ctaLink}
-              className="inline-flex items-center gap-2 bg-brand-saffron hover:bg-brand-saffron-600 text-white px-6 py-3.5 rounded-lg font-semibold text-sm transition-all shadow-lg hover:shadow-brand-saffron/50 active:scale-95"
+              className="inline-flex items-center justify-center gap-2 bg-brand-saffron hover:bg-brand-saffron-600 text-white px-5 py-2.5 sm:px-6 sm:py-3.5 rounded-xl font-semibold text-xs sm:text-sm transition-all shadow-lg active:scale-95"
             >
-              {slide.ctaText} <ArrowRight className="w-4 h-4" />
+              {slide.ctaText} <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows (Desktop / Tablet) */}
       <button
         onClick={prevSlide}
         aria-label="Previous Slide"
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-brand-saffron flex items-center justify-center transition-colors"
+        className="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-brand-saffron items-center justify-center transition-colors"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={nextSlide}
         aria-label="Next Slide"
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-brand-saffron flex items-center justify-center transition-colors"
+        className="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-brand-saffron items-center justify-center transition-colors"
       >
         <ChevronRight className="w-6 h-6" />
       </button>

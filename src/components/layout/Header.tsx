@@ -33,9 +33,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 w-full bg-white border-b border-brand-cream-300 shadow-sm">
       {/* 1. TOP ANNOUNCEMENT / UTILITY BAR */}
-      <div className="bg-brand-saffron text-white text-[11px] sm:text-xs py-1.5 px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-4">
+      <div className="bg-brand-saffron text-white text-[10px] sm:text-xs py-1.5 px-3 sm:px-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 sm:gap-4 truncate">
             <a
               href={`tel:${STORE_PHONE}`}
               className="hidden md:flex items-center gap-1 hover:text-brand-cream-200 transition-colors"
@@ -48,19 +48,21 @@ export function Header() {
             >
               <Mail className="w-3 h-3" /> {STORE_EMAIL}
             </a>
-            <span className="flex items-center gap-1 font-medium">
-              <Sparkles className="w-3 h-3 text-yellow-300" /> Free Delivery on Orders Above ₹1999 Across India!
+            <span className="flex items-center gap-1 font-medium truncate">
+              <Sparkles className="w-3 h-3 text-yellow-300 shrink-0" />
+              <span className="sm:hidden">Free Delivery above ₹1999 in India!</span>
+              <span className="hidden sm:inline">Free Delivery on Orders Above ₹1999 Across India!</span>
             </span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <a
               href={SOCIAL_LINKS.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-brand-cream-200 transition-colors font-semibold"
             >
-              WhatsApp Us
+              WhatsApp
             </a>
             <div className="hidden sm:flex items-center gap-2 border-l border-white/30 pl-3">
               <a

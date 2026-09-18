@@ -57,13 +57,18 @@ export function AddToCartButton({
     >
       {added ? (
         <>
-          <Check className="w-4 h-4" /> Added
+          <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+          <span>Added</span>
         </>
       ) : isOutOfStock ? (
-        "Out of Stock"
+        <span className="text-[11px] sm:text-xs">Sold Out</span>
       ) : (
         <>
-          <ShoppingBag className="w-4 h-4" /> Add to Cart
+          <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+          <span className="text-[11px] sm:text-xs font-semibold">
+            <span className="inline sm:hidden">Add</span>
+            <span className="hidden sm:inline">Add to Cart</span>
+          </span>
         </>
       )}
     </button>

@@ -221,18 +221,18 @@ export default function HomePage() {
       <TestimonialsCarousel />
 
       {/* 7. YouTube Video Section */}
-      <section className="py-12 bg-white border-y border-brand-cream-300">
+      <section className="py-8 sm:py-12 bg-white border-y border-brand-cream-300">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center max-w-xl mx-auto mb-8">
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-teal">
+          <div className="text-center max-w-xl mx-auto mb-6 sm:mb-8">
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-teal">
               See How It’s Made
             </span>
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-brand-dark mt-1">
+            <h2 className="text-xl sm:text-3xl font-heading font-bold text-brand-dark mt-1">
               Watch Our Authentic Coastal Recipes & Stories
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-md bg-black">
               <iframe
                 src="https://www.youtube.com/embed/BiWWJWjlcr0"
