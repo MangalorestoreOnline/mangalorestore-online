@@ -1,0 +1,27 @@
+import Razorpay from "razorpay";
+import crypto from "crypto";
+
+export const razorpay = new Razorpay({
+  key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_placeholder",
+  key_secret: process.env.RAZORPAY_KEY_SECRET || "placeholder_secret",
+});
+
+export function verifyRazorpaySignature({
+  orderId,
+  paymentId,
+  signature,
+}: {
+  orderId: string;
+  paymentId: string;
+  signature: string;
+}): boolean {
+  const secret = process.env.RAZORPAY_KEY_SECRET || "placeholder_secret";
+  const body = `${orderId}|${paymentId}`;
+
+  const expectedSignature = crypto
+    .createHmac("sha256", secret)
+    .update(body.toString())
+    .digest("hex");
+
+  return expectedSignature === signature;
+}

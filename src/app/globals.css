@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 37 67% 97%; /* #FDF8F0 */
+    --foreground: 0 0% 10%;   /* #1A1A1A */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 18 84% 51%;    /* Saffron #E8571A */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 185 81% 28%; /* Teal #0D7680 */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 36 20% 93%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 36 20% 93%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 35 25% 88%;
+    --input: 35 25% 88%;
+    --ring: 18 84% 51%;
+    --radius: 0.5rem;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold text-brand-dark tracking-tight;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FDF8F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9CCA8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E8571A;
+}
